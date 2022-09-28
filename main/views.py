@@ -1,8 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 
 def homepage (request):
     return render(request, "index.html")
 
 def test(request):
     return render(request, "test.html")
+
+def check(request):
+    return HttpResponse("Control and check")
 # Create your views here.
