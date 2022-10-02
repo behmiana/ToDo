@@ -25,105 +25,24 @@
         </div>
 
         <div class="todo_container">
-
+            {% for todo in todo_list %}
             <div class="todo_item">
                 <div class="todo_item_header">
                     <label class="checkbox_container">
                         <input type="checkbox"/>
                         <span class="ckeckmark"></span>
                     </label>
-                    <h4>Купить молоко</h4>
+                    <h4>{{ todo.text }}</h4>
                 </div>
                 <div class="todo_item_footer">
-                    <p>17.11.2020 <span>17:22</span></p>
+                    <p>{{ todo.date }}</p>
                     <div class="action_buttons">
-                        <img src="./star-512.webp" />
-                        <img src="./1345874.png" />
+                        <img src="{% static 'icons/star-512.webp' %}" />
+                        <img src="{% static 'icons/1345874.png' %}" />
                     </div>
                 </div>
             </div>
-
-            <div class="todo_item marked">
-                <div class="todo_item_header">
-                    <label class="checkbox_container">
-                        <input type="checkbox"/>
-                        <span class="ckeckmark"></span>
-                    </label>
-                    <h4>Купить молоко</h4>
-                </div>
-                <div class="todo_item_footer">
-                    <p>17.11.2020 <span>17:22</span></p>
-                    <div class="action_buttons">
-                        <img src="./star-512.webp" />
-                        <img src="./1345874.png" />
-                    </div>
-                </div>
-            </div>
-            <div class="todo_item done">
-                <div class="todo_item_header">
-                    <label class="checkbox_container">
-                        <input type="checkbox"/>
-                        <span class="ckeckmark"></span>
-                    </label>
-                    <h4>Купить молоко</h4>
-                </div>
-                <div class="todo_item_footer">
-                    <p>17.11.2020 <span>17:22</span></p>
-                    <div class="action_buttons">
-                        <img src="./star-512.webp" />
-                        <img src="./1345874.png" />
-                    </div>
-                </div>
-            </div>
-            <div class="todo_item marked">
-                <div class="todo_item_header">
-                    <label class="checkbox_container">
-                        <input type="checkbox"/>
-                        <span class="ckeckmark"></span>
-                    </label>
-                    <h4>Купить молоко</h4>
-                </div>
-                <div class="todo_item_footer">
-                    <p>17.11.2020 <span>17:22</span></p>
-                    <div class="action_buttons">
-                        <img src="./star-512.webp" />
-                        <img src="./1345874.png" />
-                    </div>
-                </div>
-            </div>
-            <div class="todo_item">
-                <div class="todo_item_header">
-                    <label class="checkbox_container">
-                        <input type="checkbox"/>
-                        <span class="ckeckmark"></span>
-                    </label>
-                    <h4>Купить молоко</h4>
-                </div>
-                <div class="todo_item_footer">
-                    <p>17.11.2020 <span>17:22</span></p>
-                    <div class="action_buttons">
-                        <img src="./star-512.webp" />
-                        <img src="./1345874.png" />
-                    </div>
-                </div>
-            </div>
-            <div class="todo_item done">
-                <div class="todo_item_header">
-                    <label class="checkbox_container">
-                        <input type="checkbox"/>
-                        <span class="ckeckmark"></span>
-                    </label>
-                    <h4>Купить молоко</h4>
-                </div>
-                <div class="todo_item_footer">
-                    <p>17.11.2020 <span>17:22</span></p>
-                    <div class="action_buttons">
-                        <img src="./star-512.webp" />
-                        <img src="./1345874.png" />
-                    </div>
-                </div>
-            </div>
-    
+            {% endfor %}
         </div>
 
     </section>
