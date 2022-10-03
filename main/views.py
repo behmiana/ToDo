@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse,redirect
 from .models import todo
 
 def homepage (request):
@@ -10,4 +10,13 @@ def test(request):
 
 def check(request):
     return HttpResponse("Control and check")
-# Create your views here.
+
+
+def add_todo(request):
+    f = request.POST
+    text= f["todo_text"]
+    td=todo(
+        text=text
+    )
+    td.save()
+    return redirect(homepage)
