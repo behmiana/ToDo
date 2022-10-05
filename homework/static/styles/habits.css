@@ -1,0 +1,130 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #263238;
+}
+
+section {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.creat_conteiner{
+    width: 80%;
+}
+
+.creat_input {
+    padding: 12px 20px;
+    font-size: 18px;
+    width: 80%;
+}
+
+.creat_button{
+    padding: 12px 20px;
+    background-color: rgb(69, 125, 174);
+    border: 1px solid rgba(208, 226, 43, 0.836);
+    color: rgb(216, 80, 80);
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.creat_button:active{
+    border: 1px solid rgb(187, 226, 10);
+    box-shadow: 2px 2px 5px 3px rgb(206, 175, 2);
+}
+
+.todo_conteiner{
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    height:400px;
+}
+
+.todo_item{
+    border: 1px solid salmon;
+    border-radius: 5px;
+    width: 35%;
+    padding: 10px 15px;
+    background:linear-gradient(90deg, rgb(221, 162, 172), 15%, rgb(241, 241, 75), rgb(115, 230, 115));
+    margin-bottom: 20px;
+}
+
+.todo_item.done{
+    background: rgb(18, 197, 152);
+    text-decoration: linen;
+    color: rgb(214, 105, 16);
+}
+
+.todo_item.done h4, .todo_item.done p, .todo_item.done span{
+    color: rgb(112, 11, 121);
+}
+
+.todo_item.mark{
+    background: rgb(153, 153, 151);
+    color: darkred;
+}
+
+.todo_item.mark h4, .todo_item.mark p, .todo_item.mark span{
+    color:rgb(119, 112, 112);
+    text-decoration: line-through;
+    
+}
+
+.todo_item.market{
+    background: gold;
+}
+
+
+.todo_item.market h4, .todo_item.market p, .todo_item.market span{
+    color: rgb(72, 43, 173);
+}
+
+.todo_item_footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.todo_item_footer p{
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: lighter;
+}
+
+.todo_item_footer.action_buttons{
+    display: flex;
+}
+
+.todo_item_footer img{
+    width: 25px;
+    height: 25px;
+    margin-bottom: 0 5px;
+    cursor: pointer;
+    border: 1px solid rgb(153, 148, 148);
+    background-color: white;
+    bottom: 0;
+    
+    
+}
+
+.todo_item h4{
+    font-family: cursive;
+    text-transform: capitalize;
+    word-wrap: break-word;
+
+}
+
+.todo_item h5{
+    font-size: larger;
+    word-wrap: break-word;
+}
