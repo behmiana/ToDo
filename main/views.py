@@ -20,3 +20,14 @@ def add_todo(request):
     )
     td.save()
     return redirect(homepage)
+
+def delete_todo(request, id):
+    td=todo.objects.get(id=id)
+    td.delete()
+    return redirect(homepage)
+
+def mark_todo(request, id):
+    td=todo.objects.get(id=id)
+    td.is_favorite = True
+    td.save()
+    return redirect(homepage)

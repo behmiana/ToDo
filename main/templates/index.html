@@ -41,8 +41,12 @@
                 <div class="todo_item_footer">
                     <p>{{ todo.date }}</p>
                     <div class="action_buttons">
-                        <img src="{% static 'icons/star-512.webp' %}" />
-                        <img src="{% static 'icons/1345874.png' %}" />
+                        <a href = "{% url 'mark_todo' todo.id %}">
+                         <img src="{% static 'icons/star.png' %}" />
+                        </a>
+                        <a href = "{% url 'delete_todo' todo.id %}">
+                          <img src="{% static 'icons/delete.png' %}" />
+                        </a>
                     </div>
                 </div>
             </div>
