@@ -28,6 +28,12 @@ def delete_todo(request, id):
 
 def mark_todo(request, id):
     td=todo.objects.get(id=id)
-    td.is_favorite = True
+    td.is_favorite = not td.is_favorite
+    td.save()
+    return redirect(homepage)
+
+def close_todo(request,id):
+    td=todo.objects.get(id=id)
+    td.is_closed = not td.is_closed
     td.save()
     return redirect(homepage)

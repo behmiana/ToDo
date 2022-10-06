@@ -34,5 +34,6 @@ urlpatterns = [
     path("add-habits/", add_habits, name="add-habits"),
     path("delete_todo/<id>/", delete_todo, name="delete_todo"),
     path("mark_todo/<id>/", mark_todo, name="mark_todo"),
+    path("close_todo/<id>/", close_todo, name="close_todo"),
 ]   + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT) \
     + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
