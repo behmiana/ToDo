@@ -1,6 +1,7 @@
 from cgitb import text
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, HttpResponse
+
 from .models import ToMeet, Habits
 
 def project (request):
@@ -16,16 +17,16 @@ def meeting (request):
 
 def add_todos(request):
     f=request.POST
-    text=f["todo_text"]
-    number = f["todo_number"]
-    comment = f["todo_comment"]
-    todo=ToMeet(
+    text=f["tomeet_text"]
+    number = f["tomeet_number"]
+    comment = f["tomeet_comment"]
+    tomeet=ToMeet(
         persone=text,
         phone_number = number,
         comment = comment
 
     )
-    todo.save()
+    tomeet.save()
     return redirect(meeting)
 
 def habits(request):
@@ -47,4 +48,17 @@ def add_habits(request):
     )
     hbs.save()
     return redirect(habits)
+
+def mark_tomeet(request, id):
+    tomeet=ToMeet.objects.get(id=id)
+    tomeet.is_favorite = not tomeet.is_favorite
+    tomeet.save()
+    return redirect(meeting)
+
+
+def delete_tomeet(request, id):
+    tomeet=ToMeet.objects.get(id=id)
+    tomeet.delete()
+    return redirect(meeting)
+
 

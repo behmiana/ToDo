@@ -7,45 +7,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" method="POST">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ToMeet</title>
     <!--<link rel="stylesheet" href="./styles/checkbox.css">-->
     <link rel="stylesheet" href="{% static 'styles/meeting1.css' %}"/>
     
 </head>
 <body>
     <section>
-        <div class="creat_conteiner">
+        <div class="create_container">
             <form action="{% url 'add-todos' %}" method="POST">
                 {% csrf_token %}
                 <input type="text" 
-                class="creat_input" 
-                placeholder="Ваша имя-фамилия"name="todo_text">
+                class="create_input" 
+                placeholder="Ваша имя-фамилия"name="tomeet_text">
                 
-                    <input type="text" class="creat_input" 
-                    placeholder="Телефон" name="todo_number">
+                    <input type="text" class="create_input" 
+                    placeholder="Телефон" name="tomeet_number">
 
-                    <input type="text" class="creat_input" 
-                    placeholder="Коментарий" name="todo_comment">
-                    <button class="creat_button">Добавить</button>
+                    <input type="text" class="create_input" 
+                    placeholder="Коментарий" name="tomeet_comment">
+                    <button class="create_button">Добавить</button>
     
             </form>
         </div>
 
-        <div class="todo_conteiner">
+        <div class="todo_container">
             {% for todo in todo_list %}
-            <div class="todo_item">
-                <label class="checkbox_conteiner">
-                    <input type="checkbox">
+            <div class="todo_item
+           {% if todo.is_favorite %}
+             marked
+           {% endif %}
+
+           {% if todo.is_closed %}
+              done
+           {% endif %}
+          ">
+                <label class="checkbox_container">
+                     <input type="checkbox"
+                      {% if todo.is_closed %}
+                         checked
+                      {% endif%}
+                    />
                     <span class="checkmark"></span>
                 </label>
                 <h4>ИМЯ: {{ todo.persone }}</h4>
                 <h4>НОМЕР: {{todo.phone_number}}</h4>
-                <h4 class="ju">КОММЕНТ: {{todo.comment}}</h4>
+                <h4>КОММЕНТ: {{todo.comment}}</h4>
                 <div class="todo_item_footer">
                     <p>{{ todo.date_of_meeting }}</p>
                     <div class="action_buttons">
-                        <img src="{% static 'icons/vip.jpg' %}" />
-                        <img src="{% static 'icons/delete.png' %}"/>
+                        <a href = "{% url 'mark_tomeet' todo.id %}">
+                            {% if todo.is_favorite %}   
+                                <img src="{% static 'icons/marked.png' %}" />
+                            {% else %}
+                                <img src="{% static 'icons/unstar.png' %}" />
+                            {% endif %}
+                        </a>
+                        <a href = "{% url 'delete_tomeet' todo.id %}">
+                              <img src="{% static 'icons/delete.png' %}" />
+                        </a>
                     </div>
                 </div>
             </div>

@@ -13,17 +13,17 @@ section {
     align-items: center;
 }
 
-.creat_conteiner{
+.create_container{
     width: 80%;
 }
 
-.creat_input {
+.create_input {
     padding: 12px 20px;
     font-size: 18px;
     width: 80%;
 }
 
-.creat_button{
+.create_button{
     padding: 12px 20px;
     background-color: rgb(170, 40, 210);
     border: 1px solid rgba(208, 226, 43, 0.836);
@@ -35,12 +35,12 @@ section {
     cursor: pointer;
 }
 
-.creat_button:active{
+.create_button:active{
     border: 1px solid rgb(187, 226, 10);
     box-shadow: 2px 2px 5px 3px rgb(206, 175, 2);
 }
 
-.todo_conteiner{
+.todo_container{
     padding: 30px 20px;
     display: flex;
     justify-content: space-around;
@@ -67,23 +67,23 @@ section {
     color: rgb(112, 11, 121);
 }
 
-.todo_item.mark{
+.todo_item.todo_item.marked{
     background: rgb(153, 153, 151);
     color: darkred;
 }
 
-.todo_item.mark h4, .todo_item.mark p, .todo_item.mark span{
+.todo_item.marked h4, .todo_item.mark p, .todo_item.mark span{
     color:rgb(119, 112, 112);
     text-decoration: line-through;
     
 }
 
-.todo_item.market{
+.todo_item.marked{
     background: gold;
 }
 
 
-.todo_item.market h4, .todo_item.market p, .todo_item.market span{
+.todo_item.marked h4, .todo_item.market p, .todo_item.market span{
     color: rgb(72, 43, 173);
 }
 
@@ -108,8 +108,7 @@ section {
     height: 25px;
     margin: 0 5px;
     cursor: pointer;
-    border: 1px solid rgb(153, 148, 148);
-    background-color: white;
+  
 }
 
 .todo_item h4{
@@ -118,11 +117,5 @@ section {
 
 }
 
-.ju{
-    font-family: fantasy;
-    text-transform: uppercase;
-}
 
-.todo_item h5{
-    font-size: larger;
-}
+
